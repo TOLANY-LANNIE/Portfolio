@@ -1,3 +1,4 @@
+//scroll function
 const header = document.querySelector('.main-header');
 
 window.addEventListener('scroll',()=>{

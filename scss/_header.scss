@@ -1,14 +1,23 @@
+@use 'variables' as v;
 .main-header{
     position: fixed;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     height: 65px;
     width: 100vw;
-    padding: 0 10vw;
-    color: rgba($color: #fff, $alpha: .2);
+    padding: 6vh 6vw;
+    color: rgba($color: white, $alpha: .2);
     z-index: 1;
+    transition: .4s ease;
 
+    .logo{
+        h1{
+            color: white;
+            font-size: 18px;
+            cursor: pointer;
+        }
+    }
     a {
         text-decoration: none;
         color: inherit;
@@ -25,9 +34,75 @@
                 padding: 1rem .5rem;
             }
             a:hover {
-                color: rgba($color: #fff, $alpha: 1.0);;
+                color: rgba($color: white, $alpha: 1.0);
+            }
+            a:active{
+                color: rgba($color: v.$hover_light, $alpha: 1.0);
             }
         }
     }
-    
+    .menu-icon{
+        position: relative;
+        padding:  26px 10px;
+        z-index: 1;
+        display: none;
+        
+        &__line{
+            display: block;
+            position: relative;
+            background:white;
+            height: 1.5px;
+            width: 18px;
+            border-radius: 4px;
+
+            &::before,&::after{
+                content: '';
+                position: absolute;
+                height: 100%;
+                width: 100%;
+                border-radius: 4px;
+                background:white;
+                transition: background .8s ease;
+            }
+
+            &::before{
+                transform: translateY(-5px);
+
+            }
+            &::after{
+                transform: translateY(5px);
+            }
+        }
+    }
+
+    .menu-btn{
+        position:absolute;
+        top: -100px;
+
+        &:focus ~ .menu-icon{
+            .menu-icon__line{
+                &::before{
+                    transform: translateY(-7px);
+                }
+                &::after{
+                    transform: translateY(7px);
+                }
+            }
+        }
+
+    }
+    &.scrolled{
+        height: 50px;
+        background:v.$primary_background;
+        color:v.$text-color-primary;
+
+        .menu-icon{
+            &__line,
+            &__line::before,
+            &__line::after{
+                background:v.$text-color-primary;
+            }
+            
+        }
+    }
 }
