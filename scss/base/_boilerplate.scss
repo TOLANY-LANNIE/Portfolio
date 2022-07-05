@@ -1,0 +1,38 @@
+@use '../base/variables' as v;
+@use '../util/' as f;
+
+html{
+    box-sizing: border-box;
+    font-size: 100%;
+}
+*, 
+*::before, 
+*::after{
+    box-sizing: inherit;
+}
+
+body {
+    background-color:v.$primary_background;
+    font-family: f.$font;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    color: v.$text-color-primary;
+    font-size: 14px;
+  }
+  
+  .sections{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .container{
+    width: 100%;
+    margin: 2rem auto;
+    
+    p{
+        margin: 1rem 0;
+    }
+}

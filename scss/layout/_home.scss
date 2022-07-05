@@ -9,12 +9,8 @@
 
     h1{
         position: relative;
-        font-size: 4rem;
-        text-transform: uppercase;
-        text-align: center;
-        background-color: #161616;
-        padding: 2rem;
-        border-radius: 20px 0;
+        font-size: 3rem;
+        text-align: left;
         
 
         &::before, &::after{
@@ -26,11 +22,9 @@
         }
         &::before{
             left: 0;
-            border-bottom:6px solid #ffffff;
         }
         &::after{
             right: 0;
-            border-bottom:6px solid #ffffff;
         }
         
     }

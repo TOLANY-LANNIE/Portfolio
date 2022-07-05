@@ -1,4 +1,4 @@
-@use 'variables' as v;
+@use '../base/variables' as v;
 .main-header{
     position: fixed;
     display: flex;
@@ -7,7 +7,7 @@
     height: 65px;
     width: 100vw;
     padding: 6vh 6vw;
-    color: rgba($color: white, $alpha: .2);
+    color: v.$text-color-secondary;
     z-index: 1;
     transition: .4s ease;
 
@@ -16,6 +16,7 @@
             color: white;
             font-size: 18px;
             cursor: pointer;
+            float: left;
         }
     }
     a {
